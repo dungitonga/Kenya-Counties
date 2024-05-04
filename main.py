@@ -17,10 +17,7 @@ while len(guess_list) < 47:
     name = answer_county.title()
 
     if name == "Exit":
-        remaining_counties = []
-        for county in answer_list:
-            if county not in guess_list:
-                remaining_counties.append(county)
+        remaining_counties = [county for county in answer_list if county not in guess_list]
 
         county_dict = {"county": remaining_counties}
         info = pandas.DataFrame(county_dict)
